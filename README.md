@@ -11,7 +11,7 @@ A simple browser window made with CSS &amp; JS. A Simple `js` and `css` project.
 
 ### TODO
 - [x] Clean codepen demo - add link
-- [ ] Publish to github pages
+- [x] Publish to github pages
 - [x] Add link to github repo
 - [x] Add license
 - [x] Add domain
@@ -23,4 +23,4 @@ A simple browser window made with CSS &amp; JS. A Simple `js` and `css` project.
 - [x] Add pictures to readme
 
 
-Made with ❤  2016 Belgium - D/S
+Made with ❤ &nbps; 2016 Belgium - D/S
