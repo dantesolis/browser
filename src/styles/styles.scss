@@ -1,0 +1,197 @@
+/*
+* [NOTE] nesting is not necessary in BEM, except when extending
+* components, like in the .btn & .btn--[color], I did it here just
+* to increase specificity, but again not necessary. 
+*
+* [ATTENTION] watch out for CSS specifity rules do to nesting.
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+/// Variables
+/// @name transparent
+/// @type Color
+$transparent: hsla(0, 0%, 0%, 0);
+
+/// @name white
+/// @type Color
+$white: hsla(0, 0%, 100%, 1);
+
+/// @name black
+/// @type Color
+$black: hsla(0, 0%, 0%, 1);
+
+/// @name gray
+/// @type Color
+$gray: hsla(0, 0%, 88.6%, 1);
+
+/// @name gray-darker
+/// @type Color
+$gray-darker: hsla(0, 0%, 77.6%, 1);
+
+/// @name red
+/// @type Color
+$red:  hsla(300, 47%, 80%, 1); // plum
+
+/// @name green
+/// @type Color
+$green: hsla(150.5, 47.3%,74.7%, 1);
+
+/// @name yellow
+/// @type Color
+$yellow: hsla(60, 47.3%, 74.7%, 1);
+
+/// @name font-sm
+/// @type Number
+$font-sm: 0.2rem;
+
+
+/// @name font-md
+/// @type Number
+$font-md: 1.4rem;
+
+/// @name font-lg
+/// @type Number
+$font-lg: 2.6rem;
+
+/// @name font-mono
+/// @type String
+$font-mono: 'Ubuntu Mono', monospace;
+
+
+/// Base
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+  background: $black;
+  font-size: $font-md;
+  font-family: $font-mono;
+  color: $green;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+
+
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin-top: 3rem;
+  
+  .window--outer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    height: 500px;
+    border-top: 30px solid $gray;
+    border-right: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    border-left: 1px solid $gray;
+    border-radius: 5px;
+    
+    .btns-container {
+      display: flex;
+      top: -22px;
+      left: 0;
+      position: relative;
+      flex-direction: row;
+      width: 10%;
+      justify-content: space-around;
+    } /* end of span.btns-container */
+    
+    .btn {
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      text-align: center;
+      visibility: hidden;
+      $min: 1;
+      $max: 4;
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          animation-name: show;
+          animation-duration: 1s + ($i * 500ms);
+          animation-iteration-count: 1s;
+          animation-delay: 1.5s + ($i * 500ms);
+          animation-fill-mode: forwards;
+        }
+      }
+      
+        &--red {
+          background-color: $red;
+        }
+      
+        &--yellow {
+          background-color: $yellow;
+        }
+      
+        &--green {
+          background-color: $green; 
+        }
+    } /* end of span.btn */
+    
+    .newTab {
+      position: relative;
+      top: -40px;
+      right: 10px;
+      float: right;
+      width: 25px;
+      height: 15px;
+      background: darken($gray, 10%);
+      border-radius: 0 5px 0 5px;
+      transform: skewX(25deg)
+    }
+    
+    .window--inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+  } /* end of .window--outer */
+
+  .link__icon {
+    border: 1px solid $green;
+    border-radius: 100%;
+    background-color: $green;
+    transition: all 2s;
+
+    &:hover,
+    &:focus,
+    &:visited {
+      background-color: $red;
+      border: 1px solid $red;
+    };
+  }
+}
+
+/// Keyframes
+/// @name show
+/// @type {String}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/// Media types
+@media (max-width: 600px) {
+  main > .window--outer {
+    width: 95vw;
+    height: 450px;
+  }
+}

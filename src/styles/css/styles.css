@@ -1,0 +1,162 @@
+/*
+* [NOTE] nesting is not necessary in BEM, except when extending
+* components, like in the .btn & .btn--[color], I did it here just
+* to increase specificity, but again not necessary. 
+*
+* [ATTENTION] watch out for CSS specifity rules do to nesting.
+*/
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  font-size: 1.4rem;
+  font-family: "Ubuntu Mono", monospace;
+  color: #a0ddbf;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin-top: 3rem;
+  /* end of .window--outer */
+}
+
+main .window--outer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  height: 500px;
+  border-top: 30px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  border-left: 1px solid #e2e2e2;
+  border-radius: 5px;
+  /* end of span.btns-container */
+  /* end of span.btn */
+}
+
+main .window--outer .btns-container {
+  display: flex;
+  top: -22px;
+  left: 0;
+  position: relative;
+  flex-direction: row;
+  width: 10%;
+  justify-content: space-around;
+}
+
+main .window--outer .btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  text-align: center;
+  visibility: hidden;
+}
+
+main .window--outer .btn:nth-child(1) {
+  animation-name: show;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+main .window--outer .btn:nth-child(2) {
+  animation-name: show;
+  animation-duration: 2s;
+  animation-iteration-count: 1s;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+main .window--outer .btn:nth-child(3) {
+  animation-name: show;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+main .window--outer .btn:nth-child(4) {
+  animation-name: show;
+  animation-duration: 3s;
+  animation-iteration-count: 1s;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+}
+
+main .window--outer .btn--red {
+  background-color: #e4b4e4;
+}
+
+main .window--outer .btn--yellow {
+  background-color: #dddda0;
+}
+
+main .window--outer .btn--green {
+  background-color: #a0ddbf;
+}
+
+main .window--outer .newTab {
+  position: relative;
+  top: -40px;
+  right: 10px;
+  float: right;
+  width: 25px;
+  height: 15px;
+  background: #c8c8c8;
+  border-radius: 0 5px 0 5px;
+  transform: skewX(25deg);
+}
+
+main .window--outer .window--inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+main .link__icon {
+  border: 1px solid #a0ddbf;
+  border-radius: 100%;
+  background-color: #a0ddbf;
+  transition: all 2s;
+}
+
+main .link__icon:hover, main .link__icon:focus, main .link__icon:visited {
+  background-color: #e4b4e4;
+  border: 1px solid #e4b4e4;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  main > .window--outer {
+    width: 95vw;
+    height: 450px;
+  }
+}
+
+/*# sourceMappingURL=map/styles.css.map */
