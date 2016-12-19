@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', () => {
   /*
   * @function typeIt - takes text and splits it and writes each val in the arry in a DOM obj.
   * @global
-  * @param {string} - string
-  * @param {object} - DOM object
+  * @param str {string} - string
+  * @param el {object} - DOM object
   */
   function typeIt(str, el) {
     el.innerHTML = '';
