@@ -18,6 +18,7 @@ A simple browser window made with CSS &amp; JS. A Simple `js` and `css` project.
 - [x] Add gulp task
 - [ ] Add Google Analytics
 - [ ] Write Case Study
+- [ ] Write script to automate publishing gh-pages
 - [ ] Publish `TypeIt` function as a `npm package`
 - [x] Add pictures to readme
 
