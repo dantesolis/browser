@@ -22,5 +22,6 @@ A simple browser window made with CSS &amp; JS. A Simple `js` and `css` project.
 - [ ] Publish `TypeIt` function as a `npm package`
 - [x] Add pictures to readme
 
-Made with ❤ 2016 Belgium - D/S
+Made with ❤ 12/2016 Belgium - D/S
+
 
